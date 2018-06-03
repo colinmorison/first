@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
-import com.next.first.pojo.dto.UserDto;
+import com.next.first.pojo.dto.User;
 import com.next.first.service.UserService;
 
 
@@ -18,8 +18,8 @@ public class UserController {
 	UserService userService;
 	@RequestMapping("/queryUserList")
 	@ResponseBody
-	public PageInfo<UserDto> PageSearch(@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="size",defaultValue="5")int size){
-		PageInfo<UserDto> pageInfo = new PageInfo<UserDto>();
+	public PageInfo<User> PageSearch(@RequestParam(value="pageNum",defaultValue="1")int pageNum,@RequestParam(value="size",defaultValue="5")int size){
+		PageInfo<User> pageInfo = new PageInfo<User>();
 		
 		userService.pageSearch(pageNum,size);
 		return pageInfo;

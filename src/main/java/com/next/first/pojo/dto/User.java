@@ -2,7 +2,7 @@ package com.next.first.pojo.dto;
 
 import java.io.Serializable;
 
-public class UserDto implements Serializable {
+public class User implements Serializable {
 
 	/**
 	 * 

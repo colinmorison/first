@@ -1,8 +1,8 @@
 package com.next.first.mapper;
 
 import com.github.pagehelper.Page;
-import com.next.first.pojo.dto.UserDto;
+import com.next.first.pojo.dto.User;
 
 public interface UserMapper {
-	public Page<UserDto> findByPage();
+	public Page<User> findByPage();
 }
