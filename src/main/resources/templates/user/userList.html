@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http:/www.w3.org/1999/xhtml" xmlns:th="http:/www.thymeleaf.org" >
+<head th:include="common/common_header::commonHeader('用户管理')" />
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+		<!-- 引入公共的左侧菜单 -->
+			<div th:include="common/common_leftbar::common_leftbar(系统管理)"></div>
+		<!-- 引入公共的顶部菜单 -->
+			<div th:include="common/common_top::common_top"></div>
+	        
+	        <!-- form table区 -->
+	        <!-- page content -->
+	        <div class="right_col" role="main">
+	        	<div class="">
+			        <div class="row">
+				        <div class="col-md-12 col-sm-12 col-xs-12">
+			                <div class="x_panel">
+			                  <div class="x_title">
+			                    <h2>用户信息表 </h2>
+			                    <ul class="nav navbar-right panel_toolbox">
+			                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+			                      </li>
+			                      <li class="dropdown">
+			                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+			                        <ul class="dropdown-menu" role="menu">
+			                          <li><a href="#">Settings 1</a>
+			                          </li>
+			                          <li><a href="#">Settings 2</a>
+			                          </li>
+			                        </ul>
+			                      </li>
+			                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+			                      </li>
+			                    </ul>
+			                    <div class="clearfix"></div>
+			                  </div>
+			                  <div class="x_content">
+			                    <table id="datatable-buttons" class="table table-striped table-bordered">
+			                      <thead>
+			                        <tr>
+			                          <th>ID</th>
+			                          <th>姓名</th>
+			                        </tr>
+			                      </thead>
+			
+			
+			                      <tbody>
+			                        <tr th:each="user : ${userInfo.list}">
+			                          <td th:text="${user.id}"></td>
+			                          <td th:text="${user.name}"></td>
+			                        </tr>
+			                      </tbody>
+			                    </table>
+			                  </div>
+			                </div>
+			             </div><!-- col -->
+			        </div><!-- row -->
+	        	
+	        	</div>
+	        </div>
+	        
+		</div><!-- main_container -->
+	</div><!-- container body -->
+	<div th:include="common/onload_js::onloadJS"></div>
+</body>
+</html>
