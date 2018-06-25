@@ -3,10 +3,14 @@
 <mapper namespace="com.next.first.mapper.UserMapper">     
     <resultMap id="baseMap" type="com.next.first.pojo.dto.User" >    
         <result property="id" column="id" />   
-        <result property="name" column="name" />    
+        <result property="userName" column="name" />    
         <result property="password" column="password" />    
     </resultMap>        
-    <select id="findByPage"  resultMap="baseMap">    
-        select * from user   
+    <select id="findByPage"  resultMap="baseMap" parameterType="com.next.first.pojo.query.UserQuery">    
+        select id,name,password from user 
+        <where>
+        	<if test="id != null and id !=''"> and id = #{id}</if>
+        	<if test="userName != null and userName != ''">  and name = #{userName}</if>
+        </where>  
     </select>    
 </mapper>  

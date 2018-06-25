@@ -1,8 +1,8 @@
 package com.next.first.service;
 
-import com.github.pagehelper.PageInfo;
+import com.next.first.pojo.common.CommonResponseObject;
 import com.next.first.pojo.dto.User;
 
 public interface UserService {
-	PageInfo<User> pageSearch(int pageNum,int size);
+	CommonResponseObject<User> pageSearch(Integer pageNum,Integer size,Long userId,String userName);
 }

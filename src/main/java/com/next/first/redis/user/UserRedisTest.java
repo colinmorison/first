@@ -21,8 +21,8 @@ public class UserRedisTest {
 	@Test
 	public void addUser() {
 		User u = new User();
-		u.setId(1);
-		u.setName("张三");
+		u.setId((long) 1);
+		u.setUserName("张三");
 		userRedis.addUser("1", u);
 	}
 	@Test
@@ -33,7 +33,7 @@ public class UserRedisTest {
 	@Test
 	public void getUser() {
 		User user = userRedis.getUser("1");
-		System.out.println(user.getName());
+		System.out.println(user.getUserName());
 	}
 	@Test
 	public void delUserTable() {
